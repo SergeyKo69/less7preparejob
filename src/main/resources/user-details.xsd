@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://kogut.ru/ws/users"
+           xmlns:tns="http://kogut.ru/ws/users" elementFormDefault="qualified">
+
+
+    <xs:element name="healthRequest"/>
+
+    <xs:element name="allUsersRequest"/>
+
+    <xs:element name="loginRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="login" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="createUserRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="username" type="xs:string"/>
+                <xs:element name="login" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="email" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="getUserByIdRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="id" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="user">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="delete" type="xs:boolean"/>
+            <xs:element name="username" type="xs:string" minOccurs="0"/>
+            <xs:element name="login" type="xs:string" minOccurs="0"/>
+            <xs:element name="password" type="xs:string" minOccurs="0"/>
+            <xs:element name="email" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
+
